@@ -1,0 +1,42 @@
+package com.example.bitbyte;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class RegistrationScreen extends Activity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		Toast.makeText(this, "Please fill your details", Toast.LENGTH_LONG).show();
+		setContentView(R.layout.activity_registrationscreen_page);
+		Button reg = (Button) findViewById(R.id.RegisterHere);
+		final EditText Username = (EditText) findViewById(R.id.fullname);		
+		
+		/*
+		 Button b = (Button) findViewById(R.id.SignIn);
+		Button n = (Button) findViewById(R.id.NewUser);
+		final EditText t1 = (EditText) findViewById(R.id.email_address);
+		final EditText t2 = (EditText) findViewById(R.id.Password);
+
+		 */
+		reg.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				// write code to connect to the net page
+				 Intent regscreen = new Intent(RegistrationScreen.this, RegistrationPage.class);
+				startActivity(regscreen);
+			}
+		
+		
+	});
+	}
+}
